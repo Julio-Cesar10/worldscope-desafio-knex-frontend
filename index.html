@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>WorldScope — Explore the world</title>
+    <meta name="description" content="WorldScope lets you explore geographic data for every country in the world." />
+    <!-- Inline script avoids a flash of the wrong theme before React hydrates -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('worldscope-theme');
+          var theme = stored || 'system';
+          var resolved =
+            theme === 'system'
+              ? window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+              : theme;
+          document.documentElement.setAttribute('data-theme', resolved);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

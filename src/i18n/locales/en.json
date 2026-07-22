@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "WorldScope",
+    "tagline": "Explore the world's countries"
+  },
+  "search": {
+    "placeholder": "Search by country name…"
+  },
+  "filters": {
+    "allRegions": "All regions",
+    "region": "Region",
+    "sortBy": "Sort by",
+    "name": "Name",
+    "population": "Population",
+    "ascending": "Ascending",
+    "descending": "Descending"
+  },
+  "card": {
+    "population": "Population",
+    "region": "Region",
+    "currency": "Currency"
+  },
+  "detail": {
+    "back": "Back to list",
+    "officialName": "Official name",
+    "capital": "Capital",
+    "region": "Region",
+    "subregion": "Subregion",
+    "population": "Population",
+    "area": "Area",
+    "currencies": "Currencies",
+    "languages": "Languages",
+    "timezones": "Timezones",
+    "borders": "Border countries",
+    "noBorders": "This country has no land borders.",
+    "drivingSide": "Driving side",
+    "notFoundTitle": "Country not found",
+    "notFoundBody": "We couldn't find a country matching this code."
+  },
+  "state": {
+    "loading": "Loading countries…",
+    "loadingDetail": "Loading country details…",
+    "errorTitle": "Something went wrong",
+    "retry": "Try again",
+    "emptyTitle": "No countries found",
+    "emptyBody": "Try adjusting your search or region filter."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "en": "English",
+    "pt": "Português"
+  }
+}
