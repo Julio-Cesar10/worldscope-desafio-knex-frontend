@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* ---------- Tokens ---------- */
+
 :root {
   --font-display: 'Fraunces', 'Georgia', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -38,7 +38,7 @@
   --color-graticule: rgba(238, 240, 245, 0.05);
 }
 
-/* ---------- Reset ---------- */
+
 * {
   box-sizing: border-box;
 }
@@ -84,7 +84,7 @@ input {
   }
 }
 
-/* ---------- Shell & header ---------- */
+
 .app-shell {
   min-height: 100%;
   display: flex;
@@ -145,7 +145,7 @@ input {
   margin: 0 auto;
 }
 
-/* ---------- Controls ---------- */
+
 .segmented-control {
   display: flex;
   background: var(--color-bg);
@@ -205,7 +205,7 @@ input {
   cursor: pointer;
 }
 
-/* ---------- Toolbar (search + filters) ---------- */
+
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -249,7 +249,7 @@ input {
   gap: 6px;
 }
 
-/* ---------- Country grid & card ---------- */
+
 .country-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -330,7 +330,7 @@ input {
   text-align: right;
 }
 
-/* ---------- States (loading / error / empty) ---------- */
+
 .state-container {
   display: flex;
   flex-direction: column;
@@ -367,7 +367,7 @@ input {
   }
 }
 
-/* ---------- Country detail page ---------- */
+
 .back-link {
   display: inline-block;
   margin-bottom: 24px;
@@ -460,7 +460,7 @@ input {
   transform: translateY(-2px);
 }
 
-/* ---------- Responsive ---------- */
+
 @media (max-width: 640px) {
   .app-header__tagline {
     display: none;
