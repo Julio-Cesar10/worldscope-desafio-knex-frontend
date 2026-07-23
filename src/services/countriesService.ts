@@ -22,12 +22,7 @@ const PAGE_SIZE = 100; // limite máximo do plano gratuito
 const LIST_CACHE_KEY = 'countries-list-v1';
 const detailCacheKey = (alpha3: string) => `country-detail-${alpha3.toLowerCase()}`;
 
-/**
- * Busca todos os países (paginando internamente, já que o plano gratuito
- * limita a 100 registros por requisição) e guarda o resultado em cache local.
- * Isso permite fazer busca/filtro/ordenação no cliente, em tempo real, sem
- * gastar requisições extras da cota mensal a cada tecla digitada.
- */
+
 export async function fetchAllCountries(forceRefresh = false): Promise<CountrySummary[]> {
   if (!forceRefresh) {
     const cached = readCache<CountrySummary[]>(LIST_CACHE_KEY);
@@ -53,9 +48,7 @@ export async function fetchAllCountries(forceRefresh = false): Promise<CountrySu
   return all;
 }
 
-/**
- * Busca o registro completo de um país pelo código ISO alpha-3.
- */
+
 export async function fetchCountryByCode(alpha3: string, forceRefresh = false): Promise<CountryDetail | null> {
   const cacheKey = detailCacheKey(alpha3);
   if (!forceRefresh) {
