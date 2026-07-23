@@ -21,11 +21,7 @@ function getDisplayName(country: CountrySummary, language: string): string {
   return country.names.common;
 }
 
-/**
- * Aplica busca por nome, filtro de região e ordenação sobre a lista já
- * carregada. Mantido separado de useCountries para que a lógica de UI
- * (o que o usuário está filtrando agora) não se misture com a busca de dados.
- */
+
 export function useCountryFilters(countries: CountrySummary[], language: string): UseCountryFiltersResult {
   const [searchTerm, setSearchTerm] = useState('');
   const [region, setRegion] = useState<Region | 'all'>('all');
