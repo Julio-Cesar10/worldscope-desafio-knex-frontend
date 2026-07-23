@@ -17,7 +17,7 @@ const LIST_RESPONSE_FIELDS = [
   'currencies',
 ].join(',');
 
-const PAGE_SIZE = 100; // limite máximo do plano gratuito
+const PAGE_SIZE = 100; 
 
 const LIST_CACHE_KEY = 'countries-list-v1';
 const detailCacheKey = (alpha3: string) => `country-detail-${alpha3.toLowerCase()}`;
@@ -31,8 +31,7 @@ export async function fetchAllCountries(forceRefresh = false): Promise<CountrySu
 
   const all: CountrySummary[] = [];
   let offset = 0;
-  // Corta em 10 páginas (1000 países) como salvaguarda contra loop infinito;
-  // o dataset real tem ~250 países, então 3 páginas já bastam.
+  
   for (let page = 0; page < 10; page += 1) {
     const batch = await apiGet<CountrySummary>('', {
       limit: PAGE_SIZE,
