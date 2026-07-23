@@ -10,10 +10,7 @@ interface UseCountriesResult {
   refetch: () => void;
 }
 
-/**
- * Carrega (e cacheia) a lista completa de países uma única vez.
- * Filtro, busca e ordenação acontecem depois, no cliente — ver useCountryFilters.
- */
+
 export function useCountries(): UseCountriesResult {
   const [countries, setCountries] = useState<CountrySummary[]>([]);
   const [isLoading, setIsLoading] = useState(true);
