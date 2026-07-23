@@ -3,10 +3,7 @@ import { ApiResponse, isApiError, RestCountriesError } from '@/types/api';
 const BASE_URL = 'https://api.restcountries.com/countries/v5';
 const API_KEY = import.meta.env.VITE_RESTCOUNTRIES_API_KEY as string | undefined;
 
-/**
- * Monta a URL final a partir do path e dos query params, ignorando
- * valores undefined/null/"" para não poluir a query string.
- */
+
 function buildUrl(path: string, params?: Record<string, string | number | boolean | undefined>): string {
   const url = new URL(`${BASE_URL}${path}`);
   if (params) {
@@ -34,10 +31,7 @@ function mapStatusToFriendlyMessage(status: number): string {
   }
 }
 
-/**
- * Executa uma requisição GET contra a RestCountries v5, tratando tanto
- * falhas de rede quanto o envelope de erro { errors: [...] } da própria API.
- */
+
 export async function apiGet<T>(
   path: string,
   params?: Record<string, string | number | boolean | undefined>,
