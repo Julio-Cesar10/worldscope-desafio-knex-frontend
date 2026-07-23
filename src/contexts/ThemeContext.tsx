@@ -27,7 +27,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [preference, setPreferenceState] = useState<ThemePreference>(readStoredPreference);
   const [systemTheme, setSystemTheme] = useState<ResolvedTheme>(readSystemPreference);
 
-  // Acompanha mudanças na preferência do sistema operacional em tempo real
+  
   useEffect(() => {
     const media = window.matchMedia('(prefers-color-scheme: dark)');
     const listener = (event: MediaQueryListEvent) => setSystemTheme(event.matches ? 'dark' : 'light');
@@ -37,8 +37,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   const resolvedTheme: ResolvedTheme = preference === 'system' ? systemTheme : preference;
 
-  // Aplica o tema resolvido no <html> para que as variáveis CSS reajam,
-  // e persiste a preferência escolhida (não o tema resolvido) entre sessões.
+  /
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', resolvedTheme);
   }, [resolvedTheme]);
