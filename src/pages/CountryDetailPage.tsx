@@ -11,8 +11,7 @@ export function CountryDetailPage() {
   const { code } = useParams<{ code: string }>();
   const { t, i18n } = useTranslation();
   const { country, isLoading, error, notFound } = useCountryDetail(code);
-  // Reaproveita a lista já cacheada (nenhuma requisição extra) só para
-  // traduzir códigos alpha-3 de fronteira em nomes clicáveis.
+  
   const { countries } = useCountries();
 
   if (isLoading) return <LoadingSpinner label={t('state.loadingDetail')} />;
