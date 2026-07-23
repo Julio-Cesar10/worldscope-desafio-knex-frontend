@@ -1,8 +1,4 @@
-/**
- * Tipos alinhados ao formato de resposta da REST Countries API v5.
- * A v5 aninha os campos em objetos (names.common, codes.alpha_3, flag.emoji, etc.),
- * diferente do formato "achatado" das versões anteriores (v3.1).
- */
+
 
 export interface CountryNames {
   common: string;
@@ -74,10 +70,7 @@ export interface CountryCars {
   signs?: string[];
 }
 
-/**
- * Campos de resumo usados na listagem (cards). Buscados com response_fields
- * para manter o payload leve, já que a listagem carrega ~250 países de uma vez.
- */
+
 export interface CountrySummary {
   names: Pick<CountryNames, 'common' | 'official' | 'translations'>;
   codes: Pick<CountryCodes, 'alpha_2' | 'alpha_3'>;
@@ -88,9 +81,7 @@ export interface CountrySummary {
   currencies?: Record<string, Currency>;
 }
 
-/**
- * Registro completo de um país, usado na página de detalhes.
- */
+
 export interface CountryDetail extends CountrySummary {
   capitals?: Capital[];
   area?: CountryArea;
